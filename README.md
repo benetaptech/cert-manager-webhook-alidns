@@ -142,7 +142,7 @@ docker push <your registry>/alidns-webhook
 
 Use the helm chart in charts directory.
 ```
-helm upgrade alidns-webhook cert-manager-alidns-webhook/alidns-webhook \
+helm install alidns-webhook cert-manager-alidns-webhook/alidns-webhook \
   --namespace cert-manager \
   --set groupName=acme.alidns.com \
   --set image.repository=<your registry>/alidns-webhook \
