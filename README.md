@@ -142,5 +142,10 @@ docker push <your registry>/alidns-webhook
 
 Use the helm chart in charts directory.
 ```
-helm template charts --set image.repository=<your registry> --set image.tag=latest
+helm upgrade alidns-webhook cert-manager-alidns-webhook/alidns-webhook \
+  --namespace cert-manager \
+  --set groupName=acme.alidns.com \
+  --set image.repository=<your registry>/alidns-webhook \
+  --set image.tag=latest \
+  --wait  
 ```
